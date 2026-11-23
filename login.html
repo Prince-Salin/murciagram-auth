@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Iniciar sesión · MurciaGram</title>
+  <meta name="description" content="Accede a tu cuenta de MurciaGram con tu correo electrónico y contraseña.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#b23a2f">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="page-auth page-login">
+  <a class="skip-link" href="#formulario">Saltar al formulario</a>
+
+  <header class="header" id="inicio">
+    <p class="header__brand">
+      <img class="header__mark" src="assets/icons/favicon.svg" alt="" width="40" height="40">
+      <span class="header__name">MurciaGram</span>
+    </p>
+
+    <a class="header__account" id="account-link" href="login.html" aria-label="Iniciar sesión">
+      <img src="assets/icons/user.svg" alt="" width="22" height="22">
+      <span class="visually-hidden" id="account-label">Iniciar sesión</span>
+    </a>
+
+    <h1 class="header__title header__title--auth">Bienvenido de nuevo</h1>
+    <p class="header__claim header__claim--auth">Accede para continuar descubriendo la Región de Murcia.</p>
+    <p class="header__tag">Patrimonio · Costa · Sierra · Gastronomía</p>
+  </header>
+
+  <nav class="nav" aria-label="Navegación principal">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Galería</a></li>
+      <li><a class="nav__link" href="registro.html">Registro</a></li>
+      <li><a class="nav__link" href="login.html" aria-current="page">Acceder</a></li>
+      <li><a class="nav__link" href="privacidad.html">Privacidad</a></li>
+    </ul>
+  </nav>
+
+  <main class="main main--auth" id="formulario">
+    <div class="auth">
+      <div class="auth__visual" aria-hidden="true">
+        <img src="assets/img/murcia-desktop.webp" alt="" width="1000" height="667">
+        <p class="auth__visual-copy"><strong>Sigue explorando.</strong><br>Tu colección de municipios te está esperando.</p>
+      </div>
+
+      <section class="auth__card" aria-labelledby="form-title">
+        <h2 class="auth__title" id="form-title">Iniciar sesión</h2>
+        <p class="auth__subtitle">Introduce el correo y la contraseña de tu cuenta.</p>
+
+        <p class="notice" id="aviso-general" role="alert" hidden></p>
+        <p class="notice notice--warning" id="aviso-acceso-fallido" role="status" hidden>
+          Has iniciado sesión, pero no se pudo guardar el acceso en el historial.
+          Tu sesión está activa; puedes continuar a la galería desde la navegación.
+        </p>
+
+        <form class="form" id="form-login" novalidate>
+          <div class="field">
+            <label class="field__label" for="email">Correo electrónico</label>
+            <span class="field__control">
+              <img class="field__icon" src="assets/icons/mail.svg" alt="" width="20" height="20">
+              <input id="email" name="email" type="email" placeholder="nombre@ejemplo.com"
+                     autocomplete="email" required aria-describedby="error-email">
+            </span>
+            <p class="field__error" id="error-email" data-error-for="email"></p>
+          </div>
+
+          <div class="field field--password">
+            <label class="field__label" for="password">Contraseña</label>
+            <span class="field__control">
+              <img class="field__icon" src="assets/icons/lock.svg" alt="" width="20" height="20">
+              <input id="password" name="password" type="password" placeholder="Tu contraseña"
+                     autocomplete="current-password" required aria-describedby="error-password">
+              <button class="password-toggle" type="button" data-toggle-password="password"
+                      aria-label="Mostrar contraseña" aria-pressed="false">
+                <img class="icon-on" src="assets/icons/eye.svg" alt="" width="20" height="20">
+                <img class="icon-off" src="assets/icons/eye-off.svg" alt="" width="20" height="20">
+              </button>
+            </span>
+            <p class="field__error" id="error-password" data-error-for="password"></p>
+          </div>
+
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Iniciar sesión</button>
+            <a class="btn btn--secondary" href="index.html" role="button">Volver a la galería</a>
+          </div>
+        </form>
+
+        <p class="auth__links">
+          <a href="registro.html">¿No tienes cuenta? Regístrate →</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer footer--simple">
+    <p>© 2026 MurciaGram · Práctica académica de diseño y desarrollo web.</p>
+    <p><a href="privacidad.html">Política de privacidad</a> · <a href="index.html">Volver a la galería</a></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

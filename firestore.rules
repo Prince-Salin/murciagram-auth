@@ -1,0 +1,54 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function esPropietario(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function perfilValido() {
+      let datos = request.resource.data;
+      return datos.keys().hasAll([
+          'nombre', 'apellidos', 'email', 'fechaNacimiento',
+          'direccion', 'telefono', 'creadoEn'
+        ])
+        && datos.keys().hasOnly([
+          'nombre', 'apellidos', 'email', 'fechaNacimiento',
+          'direccion', 'telefono', 'creadoEn'
+        ])
+        && datos.nombre is string
+        && datos.nombre.size() >= 2
+        && datos.nombre.size() <= 100
+        && datos.apellidos is string
+        && datos.apellidos.size() >= 2
+        && datos.apellidos.size() <= 150
+        && datos.email is string
+        && datos.email == request.auth.token.email
+        && datos.fechaNacimiento is string
+        && datos.direccion is string
+        && datos.direccion.size() >= 5
+        && datos.direccion.size() <= 300
+        && datos.telefono is string
+        && datos.telefono.size() <= 30
+        && datos.creadoEn == request.time;
+    }
+
+    match /users/{uid} {
+      allow read: if esPropietario(uid);
+      allow create: if esPropietario(uid) && perfilValido();
+      allow update: if false;
+      allow delete: if false;
+
+      match /accesos/{accesoId} {
+        allow read: if esPropietario(uid);
+        allow create: if esPropietario(uid)
+          && request.resource.data.keys().hasAll(['fecha', 'tipo'])
+          && request.resource.data.keys().hasOnly(['fecha', 'tipo'])
+          && request.resource.data.fecha == request.time
+          && request.resource.data.tipo in ['registro', 'acceso'];
+        allow update, delete: if false;
+      }
+    }
+  }
+}

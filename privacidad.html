@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Política de privacidad · MurciaGram</title>
+  <meta name="description" content="Información sobre el tratamiento de datos personales de MurciaGram conforme al RGPD y la LOPDGDD.">
+  <meta name="theme-color" content="#b23a2f">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="page-auth page-privacidad">
+  <a class="skip-link" href="#legal">Saltar al contenido</a>
+
+  <header class="header" id="inicio">
+    <p class="header__brand">
+      <img class="header__mark" src="assets/icons/favicon.svg" alt="" width="40" height="40">
+      <span class="header__name">MurciaGram</span>
+    </p>
+
+    <a class="header__account" id="account-link" href="login.html" aria-label="Iniciar sesión">
+      <img src="assets/icons/user.svg" alt="" width="22" height="22">
+      <span class="visually-hidden" id="account-label">Iniciar sesión</span>
+    </a>
+
+    <h1 class="header__title header__title--auth">Política de privacidad</h1>
+    <p class="header__claim header__claim--auth">Cómo tratamos tus datos en esta práctica académica.</p>
+    <p class="header__tag">RGPD · LOPDGDD · Protección de datos</p>
+  </header>
+
+  <nav class="nav" aria-label="Navegación principal">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Galería</a></li>
+      <li><a class="nav__link" href="registro.html">Registro</a></li>
+      <li><a class="nav__link" href="login.html">Acceder</a></li>
+      <li><a class="nav__link" href="privacidad.html" aria-current="page">Privacidad</a></li>
+    </ul>
+  </nav>
+
+  <main class="main main--auth" id="legal">
+    <section class="auth__card legal" aria-labelledby="legal-title">
+      <h2 class="auth__title" id="legal-title">Aviso legal y tratamiento de datos</h2>
+      <p>Aviso de demostración para una práctica académica. No es un aviso legal listo para un servicio público; utiliza solo datos ficticios en esta aplicación.</p>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>El responsable es el autor del proyecto académico MurciaGram. Correo ficticio, no operativo: <strong>privacidad@murciagram.example</strong>. No se requiere publicar un correo personal para esta práctica. Si la aplicación se publicara para usuarios reales, habría que sustituir este aviso por información de contacto y privacidad válida.</p>
+
+      <h2>2. Finalidad</h2>
+      <p>Los datos recogidos en el formulario de registro se usan exclusivamente para crear y gestionar tu cuenta, identificarte en el sistema y registrar los accesos a la aplicación. No se utilizan para publicidad. Firebase, de Google LLC, presta los servicios de autenticación y almacenamiento indicados en el apartado de encargados.</p>
+
+      <h2>3. Legitimación</h2>
+      <p>La base legal es el consentimiento expreso que otorgas al marcar la casilla de aceptación en el formulario de registro. Puedes retirarlo en cualquier momento contactando con el responsable.</p>
+
+      <h2>4. Datos recogidos</h2>
+      <p>Nombre, apellidos, correo electrónico, contraseña, fecha de nacimiento, dirección postal y, si lo facilitas, teléfono. <strong>La contraseña nunca se almacena en nuestra base de datos:</strong> se envía directamente al servicio de autenticación de Firebase (Google), que la gestiona de forma segura.</p>
+
+      <h2>5. Conservación</h2>
+      <p>Los datos del perfil se conservan mientras la cuenta esté activa. Las entradas del historial de accesos (fecha y tipo de acceso) se conservan durante el tiempo de vida de la cuenta con fines de seguridad y depuración.</p>
+
+      <h2>6. Encargados y transferencias</h2>
+      <p>Se utilizan Firebase Authentication y Cloud Firestore, servicios de Google LLC. Antes de publicar la aplicación, la persona responsable debe comprobar la ubicación configurada para Firestore y completar la información aplicable sobre encargados y posibles transferencias internacionales.</p>
+
+      <h2>7. Derechos</h2>
+      <p>Al ser una demostración académica con contacto ficticio, no envíes datos reales ni solicitudes de derechos a esta página. Para un servicio público, se debe proporcionar un canal de contacto operativo para ejercer los derechos correspondientes.</p>
+
+      <h2>8. Cookies y seguridad</h2>
+      <p>Esta aplicación no usa cookies de publicidad ni de seguimiento. Firebase puede almacenar en tu navegador los datos técnicos necesarios para mantener la sesión. El acceso a los datos de Firestore está restringido por reglas de seguridad para que cada usuario solo pueda leer y escribir su propia información.</p>
+
+      <p class="auth__links"><a href="index.html">← Volver a la galería</a></p>
+    </section>
+  </main>
+
+  <footer class="footer footer--simple">
+    <p>© 2026 MurciaGram · Práctica académica de diseño y desarrollo web.</p>
+    <p><a href="registro.html">Registro</a> · <a href="index.html">Volver a la galería</a></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
